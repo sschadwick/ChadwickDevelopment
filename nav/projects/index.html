@@ -1,0 +1,15 @@
+---
+layout: page
+title: "Past Projects"
+permalink: /projects/
+nav: 1
+---
+
+<div class="prjContainer">
+  {% for gallery in site.data.galleries %}
+    <a href="{{ gallery.id }}" title="{{ gallery.title }}">
+      <img src="{{ gallery.imagefolder }}/{{ gallery.coverimage }}">
+      <figcaption>{{ gallery.title }}</figcaption>
+    </a>
+  {% endfor %}
+</div>

@@ -1,0 +1,27 @@
+- id: bartanen
+  title: Bartanen Construction
+  description: Project included replacing antiquated Wordpress site with Jekyll CMS, and automated FTP deploy.
+  duration: Two weeks
+  coverimage: IMG_0191.jpg
+  imagefolder: /assets/bartanen
+  images:
+  - name: IMG_0191.jpg
+  - name: IMG_0192.jpg
+  - name: IMG_0193.jpg
+  - name: IMG_0194.jpg
+  - name: IMG_0195.jpg
+  - name: IMG_0196.jpg
+
+- id: all-wayspainting
+  title: All-Ways Painting
+  description: This project was a complete redesign of an old Joomla site. It was replaced with Jekyll CMS to provide a responsive-deisgn that looks good on any screen.
+  duration: One week
+  coverimage: IMG_0184.jpg
+  imagefolder: /assets/all-wayspainting
+  images:
+  - name: IMG_0184.jpg
+  - name: IMG_0185.jpg
+  - name: IMG_0186.jpg
+  - name: IMG_0187.jpg
+  - name: IMG_0189.jpg
+  - name: IMG_0190.jpg

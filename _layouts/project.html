@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="wrapper">
+<div class="page">
+
+  <header class="project-header">
+    <h1 class="project-title">{{ gallery.title }}</h1>
+  </header>
+
+  <article class="project-content">
+
+    {% for gallery in site.data.galleries %}
+      {% if gallery.id == page.galleryid %}
+        <h1> {{ gallery.title }}</h1>
+
+        <ul class="services">
+          <li><b>Client: </b>{{ gallery.title }}</li>
+          <li><b>Duration: </b>{{ gallery.duration }}</li>
+          <li><b>Description: </b> {{ gallery.description }} </li>
+        </ul>
+
+        {{ content }}<br>
+        <div class="prjContainer">
+        {% for image in gallery.images %}
+          <a href="{{ gallery.imagefolder }}/{{ image.name }}" data-lightbox="{{ gallery.id }}" title="{{ image.text }}">
+          <img src="{{ gallery.imagefolder }}/{{ image.name }}">
+          </a>
+        {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+  </article>
+
+  </div>
+</div>

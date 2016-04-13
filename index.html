@@ -1,0 +1,88 @@
+---
+layout: default
+---
+<div class="home">
+
+<div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
+  <div class="scrim {% if site.cover %}has-cover{% endif %}">
+    <header class="site-header">
+      <h1 class="title">{{ site.title }}</h1>
+      {% if site.subtitle %}<h2 class="subtitle">{{ site.subtitle }}</h2>{% endif %}
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+<ul class="post-list">
+  {% for post in paginator.posts %}
+  <li>
+    <h2>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+
+      <p id="preview{{ post.nav }}">{{ post.content | strip_html | truncatewords: 50 }} <a class="link" id="{{ post.nav }}" onclick="toggleText(this)">{% if post.content.size > 300 %}Continue reading{% endif %}
+      </a>
+      <div class="hidden">{{ post.content }}
+      </div></p>
+    </section>
+
+    <script type="text/javascript">
+      function toggleText(context) {
+        context.parentNode.style.display = 'none';
+        var text = document.getElementsByClassName('hidden');
+        text[context.id].style.display = 'block';
+      }
+    </script>
+
+  </li>
+  {% if forloop.last == false %}
+  <hr>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% if paginator.total_pages != 1 %}
+<nav class="pagination" role="navigation">
+  <p>
+    {% if paginator.next_page %}
+    <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+    {% else %}
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+    </span>
+    {% endif %}
+    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.previous_page %}
+      {% if paginator.page == 2 %}
+      <a class="newer-posts" href="{% if site.baseurl %}{{ site.baseurl }}{% endif %}/">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      {% else %}
+      <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      {% endif %}
+    {% else %}
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+    </span>
+    {% endif %}
+  </p>
+</nav>
+{% endif %}
+
+</div>
+</div>
