@@ -92,7 +92,7 @@ social:
 
   - name: Phone
     icon: phone
-    username: (206) GOOGLE-PHONE
+    username: (206) GOOGLE PHONE
     url: tel://1-206-979-1978
     desc: Give us a call at your convenience!
     share: true
