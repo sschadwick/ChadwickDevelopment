@@ -93,16 +93,16 @@ social:
   - name: Phone
     icon: phone
     username: (206) GOOGLE PHONE
-    url: tel://1-206-979-1978
+    url: tel://
     desc: Give us a call at your convenience!
-    share: true
+    share: false
 
   - name: Fax
     icon: fax
-    username: (206) 789-0191
-    url: tel://1-206-789-0191
+    username: 
+    url: tel://
     desc: Send us a fax
-    share: true
+    share: false
 
 # Social sharing protocols
 # These are for automatically generating sharing metadata for FB and Twitter
