@@ -85,10 +85,10 @@ social:
 
   - name: LinkedIn
     icon: linkedin
-    username:
-    url:
+    username: LinkedIn
+    url: https://linkedin.com/in/stevenschadwick
     desc: Connect with me on LinkedIn
-    share: false
+    share: true
 
   - name: Phone
     icon: phone

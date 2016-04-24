@@ -20,21 +20,8 @@ layout: default
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-
-      <p id="preview{{ post.nav }}">{{ post.content | strip_html | truncatewords: 50 }} <a class="link" id="{{ post.nav }}" onclick="toggleText(this)">{% if post.content.size > 300 %}Continue reading{% endif %}
-      </a>
-      <div class="hidden">{{ post.content }}
-      </div></p>
+      <div>{{ post.content }}</div>
     </section>
-
-    <script type="text/javascript">
-      function toggleText(context) {
-        context.parentNode.style.display = 'none';
-        var text = document.getElementsByClassName('hidden');
-        text[context.id].style.display = 'block';
-      }
-    </script>
-
   </li>
   {% if forloop.last == false %}
   <hr>

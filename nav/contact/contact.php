@@ -15,7 +15,7 @@ $email_address = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
     
-$to = 'info@bartanenconstruction.com';
+$to = 'sschadwick@gmail.com';
 $email_subject = "Website Contact:  $subject";
 $email_body = "$name\n$email_address\n\n$subject\n\n$message";
 $headers = "From: $email_address\n";
